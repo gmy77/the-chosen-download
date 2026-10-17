@@ -1,0 +1,11 @@
+# Filmati e resoconti generati localmente
+Filmati/
+*.mp4
+*.m4a
+*.mkv
+*.webm
+verifica.csv
+__pycache__/
+*.py[cod]
+.venv/
+.env

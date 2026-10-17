@@ -1,0 +1,38 @@
+THE CHOSEN - AUDIO ITALIANO, 1080p MP4
+
+Verifica del 17 ottobre 2026: disponibili 34 video (32 episodi delle stagioni
+1-4 e due speciali natalizi). Gli 8 episodi della stagione 5 risultano isLocked
+nell'API pubblica e vengono segnalati e saltati. Le stagioni 6-7 non hanno episodi.
+Verificata anche l'unione video/audio su un campione di 3 secondi di S01E01.
+
+Requisiti: Python 3.10+ e FFmpeg nel PATH (presenti sul PC al momento della creazione).
+Aprire un terminale in questa cartella.
+
+Verifica tutte le stagioni disponibili, senza scaricare filmati:
+  python scarica_chosen.py
+
+Scarica tutte le stagioni disponibili:
+  python scarica_chosen.py --scarica
+
+Scarica solo la stagione 1:
+  python scarica_chosen.py --scarica --stagioni 1
+
+Prova con un solo episodio:
+  python scarica_chosen.py --scarica --stagioni 1 --limite 1
+
+Scegli una cartella di destinazione:
+  python scarica_chosen.py --scarica --cartella "D:\The Chosen"
+
+Lo script legge il catalogo pubblico del sito e la raccolta Episodes di ogni
+stagione disponibile. Seleziona 1920x1080 H.264 e la traccia italiana abbinata;
+non ripiega su altre lingue o su risoluzioni inferiori. Include eventuali speciali
+presenti nella raccolta Episodes. Esclude trailer, aftershow e tavole rotonde.
+Unisce video e audio senza ricodifica. Scrive un resoconto verifica.csv.
+
+Gli episodi completati vengono saltati al riavvio. Un episodio interrotto viene
+riscaricato da capo; il file .incompleto.mp4 non viene considerato completato.
+I file finali gia presenti vengono saltati senza verificarne il contenuto.
+Il catalogo e gli indirizzi del sito possono cambiare e richiedere un aggiornamento.
+Nessun accesso ad account e nessuna rimozione di DRM sono implementati.
+Il download completo puo occupare molte decine di GB. Nessun filmato viene
+scaricato senza il parametro --scarica.
